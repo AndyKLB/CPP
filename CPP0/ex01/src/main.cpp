@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:24:40 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/08 17:58:11 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:19:01 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
     while (1)
     {
         print_option();
-        std::cout << "enter an option:  ";
+        std::cout << "enter an option:  " << std::flush;
         std::getline(std::cin, choice);
         if (!choice.compare("ADD"))
             repertoire.addContact();
