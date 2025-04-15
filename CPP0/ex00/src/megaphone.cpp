@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:43:31 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/07 15:01:51 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:35:09 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main(int argc, char **argv)
         {
             for (int j = 0; argv[i][j]; j++)
                 std::cout << (char)toupper(argv[i][j]);
+            if (argv[i + 1])
+                std::cout << " ";
         }
         std:: cout << std::endl;
     }
