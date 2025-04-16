@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 15:24:52 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/16 14:16:35 by ankammer         ###   ########.fr       */
+/*   Created: 2025/04/16 16:06:14 by ankammer          #+#    #+#             */
+/*   Updated: 2025/04/16 16:59:02 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-#define PHONEBOOK_CLASS_HPP
-#include "../header/Contact.hpp"
-#include <sstream>
-#include <limits>
+#include "../header/Weapon.hpp"
 
-class PhoneBook
+Weapon::Weapon(std::string type) : _type(type)
 {
-public:
-    PhoneBook();
-    ~PhoneBook();
-    void addContact();
-    void searchContact() const;
-    void printAllContact() const;
+}
 
-private:
-    Contact _phoneContact[8];
-    static int _nbOfContact;
-};
+Weapon::~Weapon()
+{
+    std::cout << _type << " destroyed" << std::endl;
+}
 
-#endif
+std::string const &Weapon::getRefType() const
+{
+    std::string const &refType = _type;
+    return (refType);
+}
+
+void Weapon::setType(std::string newType)
+{
+    _type = newType;
+}

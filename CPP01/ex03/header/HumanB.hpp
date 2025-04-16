@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 15:24:52 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/16 14:16:35 by ankammer         ###   ########.fr       */
+/*   Created: 2025/04/16 15:18:03 by ankammer          #+#    #+#             */
+/*   Updated: 2025/04/16 16:39:42 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-#define PHONEBOOK_CLASS_HPP
-#include "../header/Contact.hpp"
-#include <sstream>
-#include <limits>
+#ifndef HUMAN_B_CLASS_HPP
+#define HUMAN_B_CLASS_HPP
+#include <iostream>
+#include <string>
+#include "../header/Weapon.hpp"
 
-class PhoneBook
+class humanB
 {
 public:
-    PhoneBook();
-    ~PhoneBook();
-    void addContact();
-    void searchContact() const;
-    void printAllContact() const;
+    humanB(std::string name);
+    ~humanB();
+    void attack() const;
+    void setWeapon(Weapon &weapon);
 
 private:
-    Contact _phoneContact[8];
-    static int _nbOfContact;
+    Weapon *_Weapon;
+    std::string _name;
 };
 
 #endif
