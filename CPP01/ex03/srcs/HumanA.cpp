@@ -6,13 +6,13 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:06:37 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/16 16:59:20 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:11:21 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/HumanA.hpp"
 
-humanA::humanA(std::string name, Weapon &weapon) : _name(name), _Weapon(weapon)
+humanA::humanA(std::string name, Weapon &weapon) : _Weapon(weapon), _name(name)
 {
 }
 

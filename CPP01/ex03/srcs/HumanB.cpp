@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:06:34 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/16 16:59:31 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:11:34 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 humanB::humanB(std::string name) : _name(name)
 {
-    _Weapon = nullptr;
+    _Weapon = NULL;
 }
 
 humanB::~humanB()
