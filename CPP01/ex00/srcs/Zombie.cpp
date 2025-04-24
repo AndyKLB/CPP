@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 17:50:24 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/16 12:48:30 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:52:42 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ Zombie::~Zombie()
 
 void Zombie::announce() const
 {
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << _name << " says: BraiiiiiiinnnzzzZ..." << std::endl;
 }

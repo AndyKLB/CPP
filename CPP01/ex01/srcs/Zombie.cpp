@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 17:50:24 by ankammer          #+#    #+#             */
-/*   Updated: 2025/04/16 14:58:59 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:49:22 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ Zombie::Zombie()
 }
 Zombie::~Zombie()
 {
+    std::cout << _name << " number " << _zombieNb << " has been destroyed, ";
     _zombieNb--;
-    std::cout << _name << " has been destroyed, ";
     std::cout << _zombieNb << " zombie(s) still alive" << std::endl;
 }
 
 void Zombie::announce() const
 {
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << " says: BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name)
