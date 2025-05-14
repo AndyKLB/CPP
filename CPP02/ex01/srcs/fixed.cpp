@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:22:09 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/13 14:10:37 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/13 14:43:05 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ Fixed::~Fixed()
 }
 int Fixed::getRawBits(void) const
 {
-    // std::cout << "getRawBits member function called" << std::endl;
     return (_fix);
 }
 void Fixed::setRawBits(int const raw)
