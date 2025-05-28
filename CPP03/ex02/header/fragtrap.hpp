@@ -1,45 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   claptrap.hpp                                       :+:      :+:    :+:   */
+/*   fragtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 14:47:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 13:02:43 by ankammer         ###   ########.fr       */
+/*   Created: 2025/05/28 13:19:31 by ankammer          #+#    #+#             */
+/*   Updated: 2025/05/28 15:04:57 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
-#include <iostream>
+#ifndef FRAGTRAP_HPP_CLASS
+#define FRAGTRAP_HPP_CLASS
+#include "claptrap.hpp"
 
-class ClapTrap
+class FragTrap : public ClapTrap
 {
 public:
-    ClapTrap();
-    ClapTrap(const std::string name);
-    ClapTrap(const ClapTrap &instance);
-    ~ClapTrap();
+    FragTrap();
+    FragTrap(const std::string name);
+    FragTrap(const FragTrap &instance);
+    ~FragTrap();
 
-    ClapTrap &operator=(const ClapTrap &rhs);
+    FragTrap &operator=(const FragTrap &rhs);
 
+    void highFivesGuys(void);
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-    std::string getName() const;
-    unsigned int getHitPoints() const;
-    unsigned int getEnergy() const;
-    unsigned int getAttackDamage() const;
-
 private:
-    std::string _name;
-    unsigned int _hitPoints;
-    unsigned int _energy;
-    unsigned int _attackDamage;
 };
 
-std::ostream & operator<<(std::ostream &ost, const ClapTrap &rhs);
+std::ostream &operator<<(std::ostream &ost, const FragTrap &rhs);
 
 #endif

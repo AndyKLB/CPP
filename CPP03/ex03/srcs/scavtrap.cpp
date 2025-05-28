@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:18 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 15:39:30 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:39:42 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ ScavTrap::~ScavTrap()
 }
 void ScavTrap::guardGate()
 {
-    if (getHitPoints() > 0)
-        std::cout << "ScavTrap: " << getName() << " is now in gate keeper mode" << std::endl;
-    else
-        std::cout << "ScavTrap: " << getName() << " is dead cannot enter in gate keeper mode" << std::endl;
+    std::cout << "ScavTrap: " << getName() << " is now in gate keeper mode" << std::endl;
 }
 
 void ScavTrap::attack(const std::string &target)

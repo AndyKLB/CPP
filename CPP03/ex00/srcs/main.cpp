@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:36:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/22 17:08:58 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/28 12:52:53 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,15 @@ int main()
     ClapTrap jack("Jack");
     ClapTrap victor("Victor");
 
+    std::cout << jack;
+    std::cout << victor;
+
     jack.attack("Victor");
     victor.takeDamage(5);
     victor.beRepaired(15);
+
+    std::cout << jack;
+    std::cout << victor;
 
     victor.attack("Jack");
     jack.takeDamage(9);
@@ -31,6 +37,9 @@ int main()
 
     jack.attack("victor");
     victor.takeDamage(90); // already dead
-    
-    victor.attack("jack"); //impossible
+
+    victor.attack("jack"); // impossible
+
+    std::cout << jack;
+    std::cout << victor;
 }

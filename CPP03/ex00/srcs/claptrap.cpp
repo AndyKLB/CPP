@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:59:30 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/22 17:18:47 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/28 13:04:01 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap() : _name("undefined"), _hitPoints(10), _energy(10), _attackD
 {
     std::cout << "Default constructor called" << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energy(10), _attackDamage(0)
+ClapTrap::ClapTrap(const std::string name) : _name(name), _hitPoints(10), _energy(10), _attackDamage(0)
 {
     std::cout << "String name constructor called" << std::endl;
 }
@@ -61,7 +61,10 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
     if (_hitPoints <= 0)
-        std::cout << "ClapTrap " << _name << " is already dead you cannot attack him" << std::endl;
+    {
+        std::cout << "Scavtrap " << _name << " is already dead you cannot attack him" << std::endl;
+        return;
+    }
     else
         std::cout << "ClapTrap " << _name << " has taken " << amount << " of damage" << std::endl;
     if (amount >= _hitPoints)
@@ -94,24 +97,25 @@ std::string ClapTrap::getName() const
 {
     return (_name);
 }
-int ClapTrap::getHitPoints() const
+unsigned int ClapTrap::getHitPoints() const
 {
     return (_hitPoints);
 }
-int ClapTrap::getEnergy() const
+unsigned int ClapTrap::getEnergy() const
 {
     return (_energy);
 }
-int ClapTrap::getAttackDamage() const
+unsigned int ClapTrap::getAttackDamage() const
 {
     return (_attackDamage);
 }
 
-// std::ostream & operator<<(std::ostream &ost, const ClapTrap &rhs)
-// {
-//     ost << rhs.getName();
-//     ost << rhs.getHitPoints();
-//     ost << rhs.getEnergy();
-//     ost << rhs.getAttackDamage();
-//     return (ost);
-// }
+std::ostream & operator<<(std::ostream &ost, const ClapTrap &rhs)
+{
+    ost << std::endl;
+    ost << "Name: " << rhs.getName() << std::endl;
+    ost << "Hitpoints: " << rhs.getHitPoints() << std::endl;
+    ost << "Energy: " << rhs.getEnergy() << std::endl;
+    ost << "Attack damage: " << rhs.getAttackDamage() << std::endl << std::endl;
+    return (ost);
+}
