@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:59:30 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 12:45:56 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/29 17:11:51 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap() : _name("undefined"), _hitPoints(10), _energy(10), _attackD
 {
     std::cout << "Default constructor claptrap called" << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energy(10), _attackDamage(0)
+ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10), _energy(10), _attackDamage(0)
 {
     std::cout << "String name constructor claptrap called" << std::endl;
 }

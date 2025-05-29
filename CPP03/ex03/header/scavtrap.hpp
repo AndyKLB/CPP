@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:05 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 16:08:36 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/29 17:26:02 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@ class ScavTrap : virtual public ClapTrap
 {
 public:
     ScavTrap();
-    ScavTrap(const std::string name);
+    ScavTrap(const std::string & name);
     ScavTrap(const ScavTrap &instance);
     ScavTrap &operator=(const ScavTrap &rhs);
     ~ScavTrap();
 
-    void guardGate();
+    virtual void guardGate();
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-private:
+protected:
+    unsigned int _energy;
 };
 
-std::ostream & operator<<(std::ostream &ost, const ScavTrap & rhs);
+std::ostream &operator<<(std::ostream &ost, const ScavTrap &rhs);
 
 #endif

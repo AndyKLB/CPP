@@ -6,22 +6,25 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:36:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 15:42:49 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/29 13:35:40 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/fragtrap.hpp"
+#include "../header/diamondtrap.hpp"
 
 int main()
 {
-    FragTrap jack("Jack");
-    FragTrap victor("Victor");
+    DiamondTrap jack("Jack");
+    DiamondTrap victor("Victor");
 
     std::cout << victor;
     std::cout << jack;
 
     jack.highFivesGuys();
     victor.highFivesGuys();
+    
+    jack.guardGate();
+    victor.guardGate();
     std::cout << std::endl;
 
     jack.attack("Victor");

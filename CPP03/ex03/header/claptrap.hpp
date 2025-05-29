@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:47:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 13:25:10 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/05/29 17:11:20 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class ClapTrap
 {
 public:
     ClapTrap();
-    ClapTrap(std::string name);
+    ClapTrap(const std::string &name);
     ClapTrap(const ClapTrap &instance);
     ~ClapTrap();
 
@@ -32,10 +32,10 @@ public:
     unsigned int getHitPoints() const;
     unsigned int getEnergy() const;
     unsigned int getAttackDamage() const;
-    void setName(std::string name) ;
-    void setHitPoints(unsigned int amount) ;
-    void setEnergy(unsigned int amount) ;
-    void setAttackDamage(unsigned int amount) ;
+    void setName(std::string name);
+    void setHitPoints(unsigned int amount);
+    void setEnergy(unsigned int amount);
+    void setAttackDamage(unsigned int amount);
 
 protected:
     std::string _name;
@@ -44,6 +44,6 @@ protected:
     unsigned int _attackDamage;
 };
 
-std::ostream & operator<<(std::ostream &ost, const ClapTrap &rhs);
+std::ostream &operator<<(std::ostream &ost, const ClapTrap &rhs);
 
 #endif
