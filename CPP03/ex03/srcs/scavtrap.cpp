@@ -6,26 +6,24 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:18 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/29 17:27:28 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:29:36 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/scavtrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() 
+ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "Default scavtrap constructor called" << std::endl;
     setHitPoints(100);
-    // setEnergy(50);
+    setEnergy(50);
     setAttackDamage(20);
-    _energy = 50;
 }
-ScavTrap::ScavTrap(const std::string & name) : ClapTrap(name) // possible d'use'setName dans le corps de la fonction mais plus opti d'use le constr de claptrap
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) // possible d'use'setName dans le corps de la fonction mais plus opti d'use le constr de claptrap
 {
     std::cout << "String name scavtrap constructor called" << std::endl;
     setHitPoints(100);
-    // setEnergy(50);
-    _energy = 50;
+    setEnergy(50);
 
     setAttackDamage(20);
 }
@@ -106,4 +104,17 @@ std::ostream &operator<<(std::ostream &ost, const ScavTrap &rhs)
     ost << "Attack damage: " << rhs.getAttackDamage() << std::endl
         << std::endl;
     return (ost);
+}
+
+unsigned int ScavTrap::getDefaultHitPoints()
+{
+    return (100);
+}
+unsigned int ScavTrap::getDefaultEnergy()
+{
+    return (50);
+}
+unsigned int ScavTrap::getDefaultAttackDamage()
+{
+    return (20);
 }

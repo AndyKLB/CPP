@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:19:31 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 15:04:57 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:40:00 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class FragTrap : public ClapTrap
 {
 public:
     FragTrap();
-    FragTrap(const std::string name);
+    FragTrap(const std::string &name);
     FragTrap(const FragTrap &instance);
     ~FragTrap();
 

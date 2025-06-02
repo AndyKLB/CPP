@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:19:26 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/29 17:25:39 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:29:12 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,4 +108,17 @@ std::ostream &operator<<(std::ostream &ost, const FragTrap &rhs)
     ost << "Attack damage: " << rhs.getAttackDamage() << std::endl
         << std::endl;
     return (ost);
+}
+
+unsigned int FragTrap::getDefaultHitPoints()
+{
+    return (100);
+}
+unsigned int FragTrap::getDefaultEnergy()
+{
+    return (100);
+}
+unsigned int FragTrap::getDefaultAttackDamage()
+{
+    return (30);
 }

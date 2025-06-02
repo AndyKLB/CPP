@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:19:31 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/29 17:25:32 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:29:46 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ public:
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+
+    static unsigned int getDefaultHitPoints();
+    static unsigned int getDefaultEnergy();
+    static unsigned int getDefaultAttackDamage();
 
 private:
 };

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:05 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/29 17:26:02 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:29:22 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class ScavTrap : virtual public ClapTrap
 {
 public:
     ScavTrap();
-    ScavTrap(const std::string & name);
+    ScavTrap(const std::string &name);
     ScavTrap(const ScavTrap &instance);
     ScavTrap &operator=(const ScavTrap &rhs);
     ~ScavTrap();
@@ -28,8 +28,11 @@ public:
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-protected:
-    unsigned int _energy;
+    static unsigned int getDefaultHitPoints();
+    static unsigned int getDefaultEnergy();
+    static unsigned int getDefaultAttackDamage();
+
+private:
 };
 
 std::ostream &operator<<(std::ostream &ost, const ScavTrap &rhs);

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:19:26 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 15:41:23 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:40:22 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap() : ClapTrap()
     setEnergy(100);
     setAttackDamage(30);
 }
-FragTrap::FragTrap(const std::string name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
     std::cout << "String fragtrap constructor called" << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:47:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 13:25:10 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:39:55 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class ClapTrap
 {
 public:
     ClapTrap();
-    ClapTrap(std::string name);
+    ClapTrap(const std::string &name);
     ClapTrap(const ClapTrap &instance);
     ~ClapTrap();
 

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:08:03 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/29 16:53:53 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:31:08 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
     std::cout << "Default constructor DiamondTrap called" << std::endl;
     setName(ClapTrap::getName() + "_clap_name");
-    setHitPoints(FragTrap::getHitPoints());
-    setEnergy(ScavTrap::getEnergy());
-    setAttackDamage(FragTrap::getAttackDamage());
+    setHitPoints(FragTrap::getDefaultHitPoints());
+    setEnergy(ScavTrap::getDefaultEnergy());
+    setAttackDamage(FragTrap::getDefaultAttackDamage());
 }
 DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
     std::cout << "String constructor DiamondTrap called" << std::endl;
-    setHitPoints(FragTrap::getHitPoints());
-    setEnergy(ScavTrap::_energy);
-    setAttackDamage(FragTrap::getAttackDamage());
+    setHitPoints(FragTrap::getDefaultHitPoints());
+    setEnergy(ScavTrap::getDefaultEnergy());
+    setAttackDamage(FragTrap::getDefaultAttackDamage());
 }
 DiamondTrap::DiamondTrap(const DiamondTrap &instance)
 {

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:18 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 14:39:42 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 12:40:32 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap() : ClapTrap()
     setEnergy(50);
     setAttackDamage(20);
 }
-ScavTrap::ScavTrap(const std::string name) : ClapTrap(name) // possible d'use'setName dans le corps de la fonction mais plus opti d'use le constr de claptrap
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
     std::cout << "String name scavtrap constructor called" << std::endl;
     setHitPoints(100);
