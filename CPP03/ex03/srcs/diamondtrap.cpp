@@ -6,13 +6,13 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:08:03 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/02 12:31:08 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 14:27:48 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/diamondtrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(), _name("undefined")
 {
     std::cout << "Default constructor DiamondTrap called" << std::endl;
     setName(ClapTrap::getName() + "_clap_name");
@@ -20,7 +20,7 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
     setEnergy(ScavTrap::getDefaultEnergy());
     setAttackDamage(FragTrap::getDefaultAttackDamage());
 }
-DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
 {
     std::cout << "String constructor DiamondTrap called" << std::endl;
     setHitPoints(FragTrap::getDefaultHitPoints());
@@ -54,8 +54,8 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &rhs)
 
 void DiamondTrap::whoAmI()
 {
-    std::cout << "DiamondTrap : Hello my DiamondTrap name is: " << getName() << std::endl;
     std::cout << "DiamondTrap : Hello my ClapTrap name is: " << ClapTrap::getName() << std::endl;
+    std::cout << "DiamondTrap : Hello my DiamondTrap name is: " << this->_name << std::endl;
 }
 
 void DiamondTrap::highFivesGuys(void)
@@ -78,7 +78,10 @@ void DiamondTrap::takeDamage(unsigned int amount)
 {
 
     if (getHitPoints() <= 0)
+    {
         std::cout << "DiamondTrap " << _name << " is already dead you cannot attack him" << std::endl;
+        return;
+    }
     else
         std::cout << "DiamondTrap " << _name << " has taken " << amount << " of damage" << std::endl;
     if (amount >= _hitPoints)
@@ -95,7 +98,7 @@ void DiamondTrap::takeDamage(unsigned int amount)
 void DiamondTrap::beRepaired(unsigned int amount)
 {
     if (getHitPoints() <= 0)
-        std::cout << "DiamondTrap " << _name << " is already dead and cannot be repaired" << std::endl;
+        std::cout << "DiamondTrap " << _name << " is dead and cannot be repaired" << std::endl;
     else if (getEnergy() <= 0)
         std::cout << "DiamondTrap " << _name << " cannot be repaired, no energy available" << std::endl;
     else
@@ -107,9 +110,14 @@ void DiamondTrap::beRepaired(unsigned int amount)
     }
 }
 
+std::string DiamondTrap::getMyName () const
+{
+    return(this->_name);
+}
+
 std::ostream &operator<<(std::ostream &ost, const DiamondTrap &rhs)
 {
-    ost << "Name: " << rhs.getName() << std::endl;
+    ost << "Name: " << rhs.getMyName() << std::endl;
     ost << "Hit points: " << rhs.getHitPoints() << std::endl;
     ost << "Energy: " << rhs.getEnergy() << std::endl;
     ost << "Attack damage: " << rhs.getAttackDamage() << std::endl;

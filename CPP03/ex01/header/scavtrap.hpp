@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:05 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/02 12:39:14 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:34:30 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ public:
 
     void guardGate();
     void attack(const std::string &target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
 
 private:
 };

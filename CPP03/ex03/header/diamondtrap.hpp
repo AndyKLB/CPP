@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:08:01 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/29 15:17:56 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 14:02:43 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ public:
     void beRepaired(unsigned int amount);
     void highFivesGuys(void);
     void guardGate();
-
+    std::string getMyName() const;
 
 private:
+    std::string _name;
 };
 
 std::ostream &operator<<(std::ostream &ost, const DiamondTrap &rhs);

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:18 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/02 12:29:36 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:19:12 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ void ScavTrap::guardGate()
 void ScavTrap::attack(const std::string &target)
 {
     if (getHitPoints() <= 0)
+    {
         std::cout << "Scavtrap " << _name << " cannot attack because he's dead" << std::endl;
+        return;
+    }
     else if (getEnergy() <= 0)
         std::cout << "Scavtrap " << _name << " no energy available, cannot attack" << std::endl;
     else

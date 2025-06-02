@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:36:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/05/28 15:40:07 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:36:45 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int main()
     ScavTrap victor("Victor");
     ScavTrap victori(jack);
 
-    std::cout << "copy of Jack: " << std::endl
-              << victori;
+    std::cout << "copy of Jack: " << std::endl << victori;
     std::cout << victor;
     std::cout << jack;
 

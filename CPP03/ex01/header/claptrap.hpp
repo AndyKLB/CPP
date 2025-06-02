@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:47:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/02 12:39:09 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 14:14:38 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ public:
     ClapTrap &operator=(const ClapTrap &rhs);
 
     virtual void attack(const std::string &target);
-    virtual void takeDamage(unsigned int amount);
-    virtual void beRepaired(unsigned int amount);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 
     std::string getName() const;
     unsigned int getHitPoints() const;
     unsigned int getEnergy() const;
     unsigned int getAttackDamage() const;
-    void setName(std::string name) ;
-    void setHitPoints(unsigned int amount) ;
-    void setEnergy(unsigned int amount) ;
-    void setAttackDamage(unsigned int amount) ;
+    void setName(std::string name);
+    void setHitPoints(unsigned int amount);
+    void setEnergy(unsigned int amount);
+    void setAttackDamage(unsigned int amount);
 
 protected:
     std::string _name;
@@ -44,6 +44,6 @@ protected:
     unsigned int _attackDamage;
 };
 
-std::ostream & operator<<(std::ostream &ost, const ClapTrap &rhs);
+std::ostream &operator<<(std::ostream &ost, const ClapTrap &rhs);
 
 #endif

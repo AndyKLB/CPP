@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:56:18 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/02 12:40:32 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:40:01 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,41 +56,6 @@ void ScavTrap::attack(const std::string &target)
     else
     {
         std::cout << "Scavtrap " << _name << " attacks " << target << " causing " << this->getAttackDamage() << " points of damage!" << std::endl;
-        setEnergy(getEnergy() - 1);
-    }
-}
-void ScavTrap::takeDamage(unsigned int amount)
-{
-    if (getHitPoints() <= 0)
-    {
-        std::cout << "Scavtrap " << _name << " is already dead you cannot attack him" << std::endl;
-        return;
-    }
-    else
-        std::cout << "Scavtrap " << _name << " has taken " << amount << " of damage" << std::endl;
-    if (amount >= getHitPoints())
-    {
-        setHitPoints(0);
-        std::cout << "Scavtrap " << _name << " has been killed" << std::endl;
-    }
-    else
-    {
-        setHitPoints(getHitPoints() - amount);
-        std::cout << "Scavtrap " << _name << " has now " << _hitPoints << " of hit points" << std::endl;
-    }
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-    if (getHitPoints() <= 0)
-        std::cout << "Scavtrap " << _name << " is already dead and cannot be repaired" << std::endl;
-    else if (getEnergy() <= 0)
-        std::cout << "Scavtrap " << _name << " cannot be repaired, no energy available" << std::endl;
-    else
-    {
-        std::cout << "Scavtrap " << _name << " has been repaired and gained " << amount << " of hit points" << std::endl;
-        setHitPoints(getHitPoints() + amount);
-        std::cout << "Scavtrap " << _name << " has now " << _hitPoints << " of hit points" << std::endl;
         setEnergy(getEnergy() - 1);
     }
 }

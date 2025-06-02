@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:59:30 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/02 12:39:41 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:21:44 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
     if (getHitPoints() <= 0)
+    {
         std::cout << "ClapTrap " << _name << " is already dead you cannot attack him" << std::endl;
+        return;
+    }
     else
         std::cout << "ClapTrap " << _name << " has taken " << amount << " of damage" << std::endl;
     if (amount >= _hitPoints)
@@ -86,8 +89,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << _name << " has been repaired and gained " << amount << " of hit points" << std::endl;
         setHitPoints(getHitPoints() + amount);
         std::cout << "ClapTrap " << _name << " has now " << _hitPoints << " of hit points" << std::endl;
-        setEnergy(getEnergy() -1);
-
+        setEnergy(getEnergy() - 1);
     }
 }
 
@@ -125,7 +127,7 @@ void ClapTrap::setAttackDamage(unsigned int amount)
     _attackDamage = amount;
 }
 
-std::ostream & operator<<(std::ostream &ost, const ClapTrap &rhs)
+std::ostream &operator<<(std::ostream &ost, const ClapTrap &rhs)
 {
     ost << rhs.getName();
     ost << rhs.getHitPoints();
