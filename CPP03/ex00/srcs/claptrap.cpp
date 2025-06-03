@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   claptrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankammer <ankammer@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:59:30 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/02 12:38:56 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/03 12:27:56 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (_hitPoints <= 0)
     {
-        std::cout << "Scavtrap " << _name << " is already dead you cannot attack him" << std::endl;
+        std::cout << "ClapTrap " << _name << " is already dead you cannot attack him" << std::endl;
         return;
     }
     else
