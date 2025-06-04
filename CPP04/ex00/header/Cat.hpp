@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 13:10:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 15:33:17 by ankammer         ###   ########.fr       */
+/*   Created: 2025/06/04 12:46:01 by ankammer          #+#    #+#             */
+/*   Updated: 2025/06/04 14:40:25 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_HPP
-# define ANIMAL_CLASS_HPP
-# include <iostream>
+#ifndef CAT_CLASS_HPP
+#define CAT_CLASS_HPP
+#include "../header/Animal.hpp"
 
-class Animal
+class Cat : public Animal
 {
-  public:
-	Animal();
-	Animal(const Animal &src);
-	Animal &operator=(const Animal &rhs);
-	virtual ~Animal();
-    
-	std::string getType() const;
-    
-	virtual void makeSound() const;
-    
+public:
+    Cat();
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &rhs);
+    ~Cat();
 
-  protected:
-	std::string _type;
+    virtual void makeSound() const;
+
+private:
 };
 
-std::ostream &operator<<(std::ostream &ost, const Animal &rhs);
-
+std::ostream &operator<<(std::ostream &ost, Cat &rhs);
 
 #endif

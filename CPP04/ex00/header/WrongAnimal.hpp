@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 13:10:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 15:33:17 by ankammer         ###   ########.fr       */
+/*   Created: 2025/06/04 14:48:04 by ankammer          #+#    #+#             */
+/*   Updated: 2025/06/04 15:43:54 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_HPP
-# define ANIMAL_CLASS_HPP
+#ifndef WRONG_ANIMAL_CLASS_HPP
+# define WRONG_ANIMAL_CLASS_HPP
 # include <iostream>
 
-class Animal
+class WrongAnimal
 {
   public:
-	Animal();
-	Animal(const Animal &src);
-	Animal &operator=(const Animal &rhs);
-	virtual ~Animal();
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &src);
+	WrongAnimal &operator=(const WrongAnimal &rhs);
+	virtual ~WrongAnimal();
     
 	std::string getType() const;
     
@@ -31,7 +31,7 @@ class Animal
 	std::string _type;
 };
 
-std::ostream &operator<<(std::ostream &ost, const Animal &rhs);
+std::ostream &operator<<(std::ostream &ost, const WrongAnimal &rhs);
 
 
 #endif

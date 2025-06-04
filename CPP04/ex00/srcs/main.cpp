@@ -3,24 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ankammer <ankammer@42.fr>                  +#+  +:+       +#+        */
+/*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:06:42 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/03 13:12:04 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/04 15:42:56 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../header/Animal.hpp"
+#include "../header/WrongAnimal.hpp"
+#include "../header/Cat.hpp"
+#include "../header/WrongCat.hpp"
+#include "../header/Dog.hpp"
 
-int	main(void)
+int main(void)
 {
-	const Animal *meta = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); // will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	... return (0);
+	// const Animal *animal = new Animal();
+	// const Animal *cat = new Cat();
+	// const Animal *dog = new Dog();
+	const WrongAnimal *wrongAnimal = new WrongAnimal();
+	const WrongAnimal *wrongCat = new WrongCat();
+	// std::cout << *animal << " " << std::endl;
+	// std::cout << *cat << " " << std::endl;
+	// std::cout << *dog << " " << std::endl;
+	std::cout << *wrongAnimal << " " << std::endl;
+	std::cout << *wrongCat << " " << std::endl;
+	// animal->makeSound();
+	// cat->makeSound(); // will output the cat sound!
+	// dog->makeSound();
+	wrongAnimal->makeSound();
+	wrongCat->makeSound();
+	// delete animal;
+	// delete cat;
+	// delete dog;
+	delete wrongAnimal;
+	delete wrongCat;
+	return (0);
 }

@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 13:10:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 15:33:17 by ankammer         ###   ########.fr       */
+/*   Created: 2025/06/04 12:45:50 by ankammer          #+#    #+#             */
+/*   Updated: 2025/06/04 14:41:36 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_HPP
-# define ANIMAL_CLASS_HPP
-# include <iostream>
+#include "../header/Animal.hpp"
 
-class Animal
+class Dog : public Animal
 {
-  public:
-	Animal();
-	Animal(const Animal &src);
-	Animal &operator=(const Animal &rhs);
-	virtual ~Animal();
-    
-	std::string getType() const;
-    
-	virtual void makeSound() const;
-    
+public:
+    Dog();
+    Dog(const Dog &src);
+    Dog &operator=(const Dog &rhs);
+    ~Dog();
 
-  protected:
-	std::string _type;
+    virtual void makeSound() const;
+
+private:
 };
 
-std::ostream &operator<<(std::ostream &ost, const Animal &rhs);
-
-
-#endif
+std::ostream &operator<<(std::ostream &ost, const Dog &rhs);
