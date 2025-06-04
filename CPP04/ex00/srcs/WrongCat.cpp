@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:54:05 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 15:46:25 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:47:28 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-    std::cout << "I'm not a valid Cat" << std::endl;
+    std::cout << "WrongCat: wouf $)" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &ost, const WrongCat &rhs)

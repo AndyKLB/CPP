@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:49:52 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 15:09:10 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:47:55 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ std::string WrongAnimal::getType() const
 }
 void WrongAnimal::makeSound() const
 {
-    std::cout << "I'm not a valid Animal" << std::endl;
+    std::cout << "WrongAnimal: grrrrrrrrrr $)" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &ost, const WrongAnimal &rhs)

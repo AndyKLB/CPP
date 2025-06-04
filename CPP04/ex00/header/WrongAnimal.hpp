@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:48:04 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 15:43:54 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:48:40 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongAnimal
     
 	std::string getType() const;
     
-	virtual void makeSound() const;
+	void makeSound() const;
     
 
   protected:
