@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 13:06:42 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 14:47:45 by ankammer         ###   ########.fr       */
+/*   Created: 2025/06/04 14:48:17 by ankammer          #+#    #+#             */
+/*   Updated: 2025/06/04 16:41:21 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/Cat.hpp"
-#include "../header/WrongCat.hpp"
-#include "../header/Dog.hpp"
+#ifndef WRONG_CAT_CLASS_HPP
+#define WRONG_CAT_CLASS_HPP
+#include <iostream>
+#include "../header/WrongAnimal.hpp"
 
-int main(void)
+class WrongCat : public WrongAnimal
 {
+public:
+	WrongCat();
+	WrongCat(const WrongCat &src);
+	WrongCat &operator=(const WrongCat &rhs);
+	~WrongCat();
 
-	const Animal *j = new Dog();
-	// const Animal *i = new Cat();
-	delete j;
-	// delete i;
-	return (0);
-}
+	void makeSound() const;
+};
+
+std::ostream &operator<<(std::ostream &ost, const WrongCat &rhs);
+
+#endif

@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 13:06:42 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 14:47:45 by ankammer         ###   ########.fr       */
+/*   Created: 2025/06/04 12:45:50 by ankammer          #+#    #+#             */
+/*   Updated: 2025/06/05 14:19:58 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/Cat.hpp"
-#include "../header/WrongCat.hpp"
-#include "../header/Dog.hpp"
+#include "../header/Animal.hpp"
 
-int main(void)
+class Dog : public Animal
 {
+public:
+    Dog();
+    Dog(const Dog &src);
+    Dog &operator=(const Dog &rhs);
+    ~Dog();
 
-	const Animal *j = new Dog();
-	// const Animal *i = new Cat();
-	delete j;
-	// delete i;
-	return (0);
-}
+    virtual void makeSound() const;
+    void setIdeas(const std::string &idea, int index);
+    const std::string &getIdeas(int index) const;
+
+private:
+    Brain *_brain;
+};
+
+std::ostream &operator<<(std::ostream &ost, const Dog &rhs);
