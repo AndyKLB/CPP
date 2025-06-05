@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 14:44:37 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/05 15:13:02 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ const std::string &Cat::getIdeas(int index) const
 
 std::ostream &operator<<(std::ostream &ost, const Cat &rhs)
 {
-    ost << "Type: " << rhs.getType();
+    ost << "Type: " << rhs.getType() << std::endl;;
     return (ost);
 }

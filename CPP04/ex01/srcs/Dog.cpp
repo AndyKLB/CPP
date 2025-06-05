@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:22 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 14:48:35 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/05 15:13:15 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ const std::string &Dog::getIdeas(int index) const
 
 std::ostream &operator<<(std::ostream &ost, const Dog &rhs)
 {
-    ost << "Type: " << rhs.getType();
+    ost << "Type: " << rhs.getType() << std::endl;
     return (ost);
 }

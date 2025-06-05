@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:01 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 14:14:26 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/05 15:13:56 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ private:
     Brain *_brain;
 };
 
-std::ostream &operator<<(std::ostream &ost, Cat &rhs);
+std::ostream &operator<<(std::ostream &ost, const Cat &rhs);
 
 #endif
