@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:01 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 15:13:56 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/05 16:04:05 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
     virtual void makeSound() const;
     void setIdeas(const std::string &idea, int index);
     const std::string &getIdeas(int index) const;
+    const Brain *getBrain() const;
   
 
 private:

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 15:13:02 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/05 16:08:41 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,18 @@ const std::string &Cat::getIdeas(int index) const
     static const std::string empty = "";
     if (_brain)
         return (_brain->getIdeas(index));
-    return(empty);
+    return (empty);
+}
+
+const Brain *Cat::getBrain() const
+{
+    return (_brain);
 }
 
 std::ostream &operator<<(std::ostream &ost, const Cat &rhs)
 {
-    ost << "Type: " << rhs.getType() << std::endl;;
+    ost << "Type: " << rhs.getType() << std::endl;
+    if (rhs.getBrain())
+        ost << *(rhs.getBrain());
     return (ost);
 }
