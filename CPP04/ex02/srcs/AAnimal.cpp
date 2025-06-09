@@ -1,50 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:33:07 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/09 15:19:09 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/09 15:28:07 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/Animal.hpp"
+#include "../header/AAnimal.hpp"
 
-Animal::Animal() : _type("Animal")
+AAnimal::AAnimal() : _type("Animal")
 {
-    std::cout << "Default Animal constructor called" << std::endl;
+    std::cout << "Default AAnimal constructor called" << std::endl;
 }
-Animal::Animal(const Animal &src)
+AAnimal::AAnimal(const AAnimal &src)
 {
-    std::cout << "Copy Animal constructor called" << std::endl;
+    std::cout << "Copy AAnimal constructor called" << std::endl;
 
     this->_type = src._type;
 }
-Animal &Animal::operator=(const Animal &rhs)
+AAnimal &AAnimal::operator=(const AAnimal &rhs)
 {
 
     if (this != &rhs)
         this->_type = rhs._type;
     return (*this);
 }
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-    std::cout << "Default Animal destructor called" << std::endl;
+    std::cout << "Default AAnimal destructor called" << std::endl;
 }
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
     return (this->_type);
 }
 
-void Animal::makeSound() const
+void AAnimal::makeSound() const
 {
     std::cout << "No Generic animal sound" << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &ost, const Animal &rhs)
+std::ostream &operator<<(std::ostream &ost, const AAnimal &rhs)
 {
     ost  << "Type: "<< rhs.getType();
     return (ost);

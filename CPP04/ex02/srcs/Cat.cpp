@@ -6,13 +6,13 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/09 15:31:08 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/09 15:15:55 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/Cat.hpp"
 
-Cat::Cat() : Animal(), _brain(new Brain())
+Cat::Cat() : AAnimal(), _brain(new Brain())
 {
     std::cout << "Default Cat constructor called" << std::endl;
     _type = "Cat";
@@ -28,7 +28,7 @@ Cat &Cat::operator=(const Cat &rhs)
     if (this != &rhs)
     {
         this->_type = rhs.getType();
-        delete this->_brain;
+        // delete this->_brain;
         this->_brain = new Brain(*rhs._brain);
     }
     return (*this);

@@ -6,13 +6,13 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:22 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/09 13:19:41 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/09 15:16:06 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/Dog.hpp"
 
-Dog::Dog() : Animal(), _brain(new Brain)
+Dog::Dog() : AAnimal(), _brain(new Brain)
 {
     std::cout << "Default Dog constructor called" << std::endl;
     _type = "Dog";

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:33:07 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 15:08:01 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/09 15:19:14 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-    std::cout << "No sound defined because undefined type" << std::endl;
+    std::cout << "Generic animal sound" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &ost, const Animal &rhs)
