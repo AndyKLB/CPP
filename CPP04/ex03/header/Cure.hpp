@@ -6,11 +6,26 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:24 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/09 16:53:24 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:08:10 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_CLASS_HPP
 #define CURE_CLASS_HPP
+#include "../header/AMateria.hpp"
 
+class Cure : AMateria
+{
+public:
+    Cure();
+    Cure(const Cure &src);
+    const Cure & operator=(const Cure &rhs);
+    ~Cure();
+    
+
+    virtual AMateria *clone() const;
+    virtual void use(ICharacter &target);
+
+private:
+};
 #endif

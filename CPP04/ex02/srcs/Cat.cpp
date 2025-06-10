@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:46:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/09 15:15:55 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:17:29 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat &Cat::operator=(const Cat &rhs)
     if (this != &rhs)
     {
         this->_type = rhs.getType();
-        // delete this->_brain;
+        delete this->_brain;
         this->_brain = new Brain(*rhs._brain);
     }
     return (*this);
