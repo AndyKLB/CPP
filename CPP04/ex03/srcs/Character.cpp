@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:44:09 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 17:24:31 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 16:07:08 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,20 @@ Character::Character(const Character &src)
     this->_name = src.getName();
     for (int i = 0; i < 4; i++)
     {
-        if (_items[i])
-        {
-            delete (_items[i]);
+        if (src._items[i])
             this->_items[i] = src._items[i]->clone();
-        }
+        else
+            _items[i] = NULL;
     }
 }
 Character::~Character()
 {
     std::cout << "Default Character destructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_items[i])
+            delete (this->_items[i]);
+    }
 }
 const Character &Character::operator=(const Character &rhs)
 {
@@ -51,10 +55,11 @@ const Character &Character::operator=(const Character &rhs)
         for (int i = 0; i < 4; i++)
         {
             if (_items[i])
-            {
                 delete (_items[i]);
+            if (rhs._items[i])
                 this->_items[i] = rhs._items[i]->clone();
-            }
+            else
+                this->_items[i] = NULL;
         }
     }
     return (*this);
@@ -83,12 +88,10 @@ void Character::equip(AMateria *m)
 }
 void Character::unequip(int idx)
 {
-    AMateria *trash;
-    if (idx < 4)
+    if (idx >= 0 && idx < 4)
     {
         if (this->_items[idx])
         {
-            trash = _items[idx]; // ou l'envoyer pour suppression???
             std::cout << this->getName() << " unequip " << _items[idx]->getType() << " materia" << std::endl;
             _items[idx] = NULL;
         }
@@ -100,4 +103,21 @@ void Character::unequip(int idx)
 }
 void Character::use(int idx, ICharacter &target)
 {
+    if (idx >= 0 && idx < 4)
+    {
+        if (this->_items[idx])
+        {
+            std::cout << this->getName() << ": ";
+            this->_items[idx]->use(target);
+        }
+        else
+            std::cout << this->getName() << " has no materia at this slot" << std::endl;
+    }
+    else
+        std::cout << "error invalid slot provide idx between 0 & 3" << std::endl;
+}
+
+AMateria *Character::getMateria(int idx)
+{
+    return(this->_items[idx]);
 }

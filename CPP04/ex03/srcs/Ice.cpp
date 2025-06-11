@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:22 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 15:17:39 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:59:54 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ AMateria *Ice::clone() const
 }
 void Ice::use(ICharacter &target)
 {
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl; 
+    
 }

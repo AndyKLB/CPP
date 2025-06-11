@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:24 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 15:08:10 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:06:30 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CURE_CLASS_HPP
 #include "../header/AMateria.hpp"
 
-class Cure : AMateria
+class Cure : public AMateria
 {
 public:
     Cure();

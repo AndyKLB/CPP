@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:19 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 15:08:40 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:49:09 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include "ICharacter.hpp"
+class ICharacter;
 
 class AMateria
 {

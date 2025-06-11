@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:26 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 15:18:52 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 16:08:34 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
+class AMateria;
+
 
 class ICharacter
 {
@@ -25,6 +27,8 @@ public:
     virtual void equip(AMateria *m) = 0;
     virtual void unequip(int idx) = 0;
     virtual void use(int idx, ICharacter &target) = 0;
+    virtual AMateria *getMateria(int idx) = 0;
+    
 };
 
 #endif

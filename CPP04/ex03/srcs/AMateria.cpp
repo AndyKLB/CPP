@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:59:34 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 15:08:32 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:14:46 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void AMateria::setType(const std::string &type)
     this->_type = type;
 }
 
-void use(ICharacter &target)
+void AMateria::use(ICharacter &target)
 {
 std::cout << "* uses a generic materia on " << target.getName() << " *" << std::endl;
     

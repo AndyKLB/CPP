@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:22 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 15:13:51 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:06:39 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ICE_CLASS_HPP
 #include "../header/AMateria.hpp"
 
-class Ice : AMateria
+class Ice : public AMateria
 {
 public:
     Ice();

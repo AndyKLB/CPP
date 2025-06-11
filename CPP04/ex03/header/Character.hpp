@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:44:09 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 17:04:07 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/11 16:08:48 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CHARACTER_CLASS_HPP
 #include "../header/ICharacter.hpp"
 
-class Character : Character
+class Character : public ICharacter
 {
 public:
     Character();
@@ -28,6 +28,7 @@ public:
     void equip(AMateria *m);
     void unequip(int idx);
     void use(int idx, ICharacter &target);
+    AMateria *getMateria(int idx);
 
 private:
     AMateria *_items[4];
