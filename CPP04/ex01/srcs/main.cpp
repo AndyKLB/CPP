@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:06:42 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/09 14:47:52 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:42:23 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main(void)
 		std::cout << *aDog << std::endl;
 		std::cout << std::endl;
 
-		dog->setIdeas("niku", 0);
+		dog->setIdeas("meat", 0);
 		std::cout << *dog << std::endl;
 		std::cout << std::endl;
 
@@ -96,8 +96,9 @@ int main(void)
 		std::cout << "--------------------------" << std::endl;
 		std::cout << std::endl;
 		
-		std::cout << "----------AFTER-----------" << std::endl;
 		copy->setIdeas(" deux souris", 0);
+		
+		std::cout << "----------AFTER-----------" << std::endl;
 		std::cout << "original: " << *original;
 		std::cout << std::endl;
 		std::cout << "copy: " << *copy;

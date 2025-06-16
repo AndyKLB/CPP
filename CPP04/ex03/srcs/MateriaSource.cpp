@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:32 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/11 15:36:02 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:12:44 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 }
 MateriaSource::~MateriaSource()
 {
-    std::cout << "Default MateriaSource destructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (this->_stock[i])
@@ -41,10 +40,12 @@ MateriaSource::~MateriaSource()
             this->_stock[i] = NULL;
         }
     }
+    std::cout << "Default MateriaSource destructor called" << std::endl;
 }
 
 const MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 {
+    std::cout << "Operator constructor called" << std::endl;
     if (this != &rhs)
     {
         for (int i = 0; i < 4; i++)
@@ -69,8 +70,8 @@ void MateriaSource::learnMateria(AMateria *m)
         if (!this->_stock[i])
         {
             this->_stock[i] = m->clone();
-            delete (m);
             std::cout << "Materia type " << _stock[i]->getType() << " learned" << std::endl;
+            delete (m);
             return;
         }
     }
@@ -88,3 +89,16 @@ AMateria *MateriaSource::createMateria(std::string const &type)
     std::cout << "Unknown materia type, impossible to create it!" << std::endl;
     return (NULL);
 }
+
+    void MateriaSource::printMateria()
+    {
+        for (int  i = 0; i < 4; i++)
+        {
+            if (!_stock[i])
+                std::cout << "nothing at slot [" << i << "]" << std::endl;
+            else
+                std::cout << "slot [" << i << "]: "  << _stock[i]->getType() << std::endl;
+
+        }
+        
+    }

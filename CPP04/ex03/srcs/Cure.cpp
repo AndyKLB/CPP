@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:24 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/10 15:10:49 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:12:32 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ Cure::Cure(const Cure &src)
 }
 const Cure &Cure::operator=(const Cure &rhs)
 {
+    std::cout << "Operator constructor called" << std::endl;
     if (this != &rhs)
         this->_type = rhs.getType();
+
     return (*this);
 }
 Cure::~Cure()

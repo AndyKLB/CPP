@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:10:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/09 15:15:12 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:56:39 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class AAnimal
 };
 
 std::ostream &operator<<(std::ostream &ost, const AAnimal &rhs);
+
+
+void makeSpeak(const AAnimal & animal);
 
 
 #endif

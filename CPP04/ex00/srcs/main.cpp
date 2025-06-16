@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:06:42 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/04 16:44:41 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:54:15 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "../header/Cat.hpp"
 #include "../header/WrongCat.hpp"
 #include "../header/Dog.hpp"
+
+
 
 int main(void)
 {
@@ -39,8 +41,10 @@ int main(void)
 	std::cout << *wrongAnimal << " " << std::endl;
 	std::cout << *wrongCat << " " << std::endl;
 	animal->makeSound();
-	cat->makeSound(); // will output the cat sound!
-	dog->makeSound();
+	// cat->makeSound(); // will output the cat sound!
+	// dog->makeSound();
+	makeSpeak(*dog);
+	makeSpeak(*cat);
 	wrongAnimal->makeSound();
 	wrongCat->makeSound();
 	delete animal;

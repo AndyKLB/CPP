@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:10:39 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/05 13:05:26 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:56:14 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class Animal
 };
 
 std::ostream &operator<<(std::ostream &ost, const Animal &rhs);
+
+void makeSpeak(const Animal & animal);
 
 
 #endif

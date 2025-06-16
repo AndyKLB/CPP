@@ -2,14 +2,14 @@
 ## ARGUMENTS
 NAME:= Materia
 CC:= c++
-FLAGS:= -Wall -Wextra -Werror -std=c++98 -g3
+FLAGS:= -Wall -Wextra -Werror -std=c++98 -g
 
 #######################################################
 ## SOURCES
 SRCS_DIR:= ./srcs
 OBJS_DIR:= ./objs
 
-FILES:= AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp MateriaSource.cpp
+FILES:= AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp MateriaSource.cpp Thunder.cpp
 
 SRCS:= $(addprefix $(SRCS_DIR)/, $(FILES))
 OBJS:= $(addprefix $(OBJS_DIR)/, $(FILES:.cpp=.o))

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:44:09 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/11 16:07:08 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 16:11:28 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,16 @@ Character::Character(const Character &src)
 }
 Character::~Character()
 {
-    std::cout << "Default Character destructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (this->_items[i])
             delete (this->_items[i]);
     }
+    std::cout << "Default Character destructor called" << std::endl;
 }
 const Character &Character::operator=(const Character &rhs)
 {
+    std::cout << "Operator constructor called" << std::endl;
     if (this != &rhs)
     {
         this->_name = rhs.getName();
@@ -62,6 +63,7 @@ const Character &Character::operator=(const Character &rhs)
                 this->_items[i] = NULL;
         }
     }
+
     return (*this);
 }
 
@@ -119,5 +121,9 @@ void Character::use(int idx, ICharacter &target)
 
 AMateria *Character::getMateria(int idx)
 {
-    return(this->_items[idx]);
+    if (!this->_items[idx])
+        std::cout << "No materia available at this slot" << std::endl;
+    else
+        std::cout << "Materia of type " << this->_items[idx]->getType() << " at this slot" << std::endl;
+    return (this->_items[idx]);
 }

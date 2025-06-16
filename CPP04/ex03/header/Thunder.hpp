@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Thunder.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/09 16:43:14 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/16 14:44:53 by ankammer         ###   ########.fr       */
+/*   Created: 2025/06/16 13:33:18 by ankammer          #+#    #+#             */
+/*   Updated: 2025/06/16 13:34:35 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIA_CLASS_HPP
-#define IMATERIA_CLASS_HPP
+#ifndef THUNDER_CLASS_HPP
+#define THUNDER_CLASS_HPP
+#include "../header/AMateria.hpp"
 
-#include <iostream>
-#include <string>
-#include "AMateria.hpp"
-
-class IMateriaSource
+class Thunder : public AMateria
 {
 public:
-    virtual ~IMateriaSource() {}
-    virtual void learnMateria(AMateria *) = 0;
-    virtual AMateria *createMateria(std::string const &type) = 0;
-    virtual void printMateria() = 0;
+    Thunder();
+    Thunder(const Thunder &src);
+    ~Thunder();
+    
+    const Thunder &operator=(const Thunder &rhs);
+    
+    AMateria *clone() const;
+    void use(ICharacter &target);
+
+private:
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:59:34 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/11 15:14:46 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:12:17 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ AMateria::AMateria(const AMateria &src)
 }
 const AMateria &AMateria::operator=(const AMateria &rhs)
 {
+    std::cout << "Operator constructor called" << std::endl;
     if (this != &rhs)
         this->_type = rhs.getType();
+
     return (*this);
 }
 AMateria::~AMateria()
@@ -47,6 +49,5 @@ void AMateria::setType(const std::string &type)
 
 void AMateria::use(ICharacter &target)
 {
-std::cout << "* uses a generic materia on " << target.getName() << " *" << std::endl;
-    
+    std::cout << "* uses a generic materia on " << target.getName() << " *" << std::endl;
 }

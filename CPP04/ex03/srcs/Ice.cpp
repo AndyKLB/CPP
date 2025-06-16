@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:43:22 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/11 15:59:54 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:12:36 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ Ice::~Ice()
 
 const Ice &Ice::operator=(const Ice &rhs)
 {
+    std::cout << "Operator constructor called" << std::endl;
     if (this != &rhs)
         this->_type = rhs.getType();
+
     return (*this);
 }
 
