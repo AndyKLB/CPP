@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:32:44 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/23 13:46:35 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/23 16:05:23 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include <sstream>
 #include <stdio.h>
 #include <limits>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -38,12 +41,14 @@ public:
             return ("Grade is too low");
         }
     };
-
+    
     Bureaucrat();
     Bureaucrat(const std::string &name, int grade);
     Bureaucrat(const Bureaucrat &src);
     ~Bureaucrat();
     Bureaucrat &operator=(const Bureaucrat &rhs);
+
+    void signForm(Form &form);
 
     const std::string &getName() const;
     int getGrade() const;

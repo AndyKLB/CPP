@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:27:36 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/18 16:57:43 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/23 14:31:20 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,12 @@ int main()
         if (std::cin.fail())
         {
             std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Error with getline try again";
+            std::cout << "Error with getline try again" << std::endl;
             continue;
         }
         if (notAlpha(name))
         {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Error with input provide only alpha character";
+            std::cout << "Error with input provide only alpha character" << std::endl;
             continue;
         }
         while (1)
@@ -63,14 +60,12 @@ int main()
             {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Error with getline try again";
+                std::cout << "Error with getline try again" << std::endl;
                 continue;
             }
-            if (ss.fail())
+            if (ss.fail() || !ss.eof())
             {
-                ss.clear();
-                ss.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Error with input provide only numbers";
+                std::cout << "Error with input provide only numbers" << std::endl;
                 continue;
             }
             break;
@@ -79,10 +74,18 @@ int main()
     }
     try
     {
-        Bureaucrat employe("jack", 150);
-        
+        Bureaucrat employe(name, grade);
+        Bureaucrat employeBis(name, grade);
+        employe.decrementGrade();
+        employe.decrementGrade();
+        employe.incrementGrade();
+        std::cout << employe << std::endl;
+        for (int i = 0; i < 10; i++)
+            employeBis.incrementGrade();
+        std::cout << employeBis << std::endl;
     }
-    catch
+    catch (std::exception &e)
     {
+        std::cerr << e.what() << std::endl;
     }
 }

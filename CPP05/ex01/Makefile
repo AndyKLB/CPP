@@ -1,8 +1,8 @@
 #######################################################
 ## ARGUMENTS
-NAME:= Bureaucrat
+NAME:= Form
 CC:= c++
-FLAGS := -Wall -Wextra -Werror -g
+FLAGS := -Wall -Wextra -Werror -g -std=c++98
 
 
 #######################################################
@@ -10,7 +10,7 @@ FLAGS := -Wall -Wextra -Werror -g
 SRCS_DIR:= ./srcs
 OBJS_DIR:= ./objs
 
-FILES:= main.cpp Bureaucrat.cpp
+FILES:= main.cpp Bureaucrat.cpp Form.cpp
 
 SRCS:= $(addprefix $(SRCS_DIR)/, $(FILES))
 OBJS:= $(addprefix $(OBJS_DIR)/, $(FILES:.cpp=.o))
