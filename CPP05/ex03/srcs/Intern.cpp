@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:04:18 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/25 17:20:43 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/25 18:26:56 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &formTarg
             return ((this->*FormFunctionTab[i])(formTarget));
         }
     }
-    std::cerr << "Provided form name does not exist provide a valid name" << std::endl;
-    return (0);
+    throw(notGoodFormException());
 }
 
 AForm *Intern::makePresidentialForm(const std::string &target) const
@@ -62,4 +61,9 @@ AForm *Intern::makeRobotomy(const std::string &target) const
 AForm *Intern::makeShrubberyForm(const std::string &target) const
 {
     return (new ShrubberyCreationForm(target));
+}
+
+const char *Intern::notGoodFormException::what() const throw()
+{
+    return ("Provided form name does not exist provide a valid name");
 }

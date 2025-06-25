@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:04:32 by ankammer          #+#    #+#             */
-/*   Updated: 2025/06/25 17:20:14 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/06/25 18:19:10 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 class Intern
 {
 public:
+    class notGoodFormException : public std::exception
+    {
+    public:
+        const char *what() const throw();
+    };
+
     Intern();
     Intern(const Intern &src);
     Intern &operator=(const Intern &rhs);
