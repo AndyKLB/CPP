@@ -1,8 +1,8 @@
 #######################################################
 ## ARGUMENTS
-NAME:= Bureaucrat
+NAME:= Intern
 CC:= c++
-FLAGS := -Wall -Wextra -Werror -g
+FLAGS := -Wall -Wextra -Werror -g -std=c++98
 
 
 #######################################################
@@ -10,7 +10,7 @@ FLAGS := -Wall -Wextra -Werror -g
 SRCS_DIR:= ./srcs
 OBJS_DIR:= ./objs
 
-FILES:= main.cpp Bureaucrat.cpp
+FILES:= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 SRCS:= $(addprefix $(SRCS_DIR)/, $(FILES))
 OBJS:= $(addprefix $(OBJS_DIR)/, $(FILES:.cpp=.o))
@@ -32,6 +32,7 @@ clean:
 
 fclean: clean
 	rm -rf $(OBJS_DIR)
+	rm -rf *_shrubbery
 
 re: fclean all
 
