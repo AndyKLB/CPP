@@ -28,11 +28,10 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(NAME) *_shrubbery
 
 fclean: clean
 	rm -rf $(OBJS_DIR)
-	rm -rf *_shrubbery
 
 re: fclean all
 
