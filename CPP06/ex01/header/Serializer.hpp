@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 15:31:16 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/02 15:53:39 by ankammer         ###   ########.fr       */
+/*   Created: 2025/07/02 16:17:47 by ankammer          #+#    #+#             */
+/*   Updated: 2025/07/02 16:47:23 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ScalarConverter.hpp"
+#ifndef SERIALIZER_CLASS_HPP
+#define SERIALIZER_CLASS_HPP
+#include <iostream>
+#include "Data.hpp"
 
-int main(int argc, char **argv)
+class Serializer
 {
-    if (argc != 2)
-    {
-        std::cout << "invalid argument: <literal>" << std::endl;
-        return (1);
-    }
-    ScalarConverter::convert(argv[1]);
-    return (0);
-}
+public:
+    static uintptr_t serialize(Data *ptr);
+    static Data *deserialize(uintptr_t raw);
+
+private:
+    Serializer();
+    Serializer(const Serializer &src);
+    Serializer &operator=(const Serializer &rhs);
+    ~Serializer();
+};
+
+#endif

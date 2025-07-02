@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 15:31:16 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/02 15:53:39 by ankammer         ###   ########.fr       */
+/*   Created: 2025/07/02 16:17:57 by ankammer          #+#    #+#             */
+/*   Updated: 2025/07/02 16:21:21 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ScalarConverter.hpp"
+#ifndef DATA_STRUCT_HPP
+#define DATA_STRUCT_HPP
+#include <iostream>
 
-int main(int argc, char **argv)
+struct Data
 {
-    if (argc != 2)
-    {
-        std::cout << "invalid argument: <literal>" << std::endl;
-        return (1);
-    }
-    ScalarConverter::convert(argv[1]);
-    return (0);
-}
+    int age;
+    std::string name;
+};
+
+#endif

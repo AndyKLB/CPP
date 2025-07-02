@@ -1,6 +1,6 @@
 #######################################################
 ## ARGUMENTS
-NAME:= 
+NAME:= RealType
 CC:= c++
 FLAGS:= -Wall -Wextra -Werror 
 
@@ -9,7 +9,7 @@ FLAGS:= -Wall -Wextra -Werror
 SRCS_DIR:= ./srcs
 OBJS_DIR:= ./objs
 
-FILES:= main.cpp
+FILES:= main.cpp RealType.cpp
 
 SRCS:= $(addprefix $(SRCS_DIR)/, $(FILES))
 OBJS:= $(addprefix $(OBJS_DIR)/, $(FILES:.cpp=.o))

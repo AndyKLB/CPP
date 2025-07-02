@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 15:31:16 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/02 15:53:39 by ankammer         ###   ########.fr       */
+/*   Created: 2025/07/02 17:28:24 by ankammer          #+#    #+#             */
+/*   Updated: 2025/07/02 17:32:49 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ScalarConverter.hpp"
+#ifndef BASE_HPP_CLASS
+#define BASE_HPP_CLASS
 
-int main(int argc, char **argv)
+class Base
 {
-    if (argc != 2)
-    {
-        std::cout << "invalid argument: <literal>" << std::endl;
-        return (1);
-    }
-    ScalarConverter::convert(argv[1]);
-    return (0);
-}
+public:
+    virtual ~Base();
+};
+
+class A : public Base
+{
+};
+
+class B : public Base
+{
+};
+
+class C : public Base
+{
+};
+
+class D : public Base
+{
+};
+
+#endif

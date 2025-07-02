@@ -2,14 +2,14 @@
 ## ARGUMENTS
 NAME:= scalar
 CC:= c++
-FLAGS:= -Wall -Wextra -Werror 
+FLAGS:= -Wall -Wextra -Werror -Wno-conversion
 
 #######################################################
 ## SOURCES
 SRCS_DIR:= ./srcs
 OBJS_DIR:= ./objs
 
-FILES:= main.cpp
+FILES:= main.cpp ScalarConverter.cpp
 
 SRCS:= $(addprefix $(SRCS_DIR)/, $(FILES))
 OBJS:= $(addprefix $(OBJS_DIR)/, $(FILES:.cpp=.o))
