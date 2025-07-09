@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:05:38 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/02 17:07:39 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/07 14:40:37 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ bool ScalarConverter::isFloat(const std::string &literal)
         return (false);
     if (literal.find('.') == std::string::npos) // verifie la presence d un point
         return (false);
-    cutNbr = literal.substr(0, literal.size() - 1); // enleve le 'f' pour tenter une conversio
+    cutNbr = literal.substr(0, literal.size() - 1); // enleve le 'f' pour tenter une conversion
     std::strtof(cutNbr.c_str(), &pEnd);             // convertit en float
     if (*pEnd == '\0')                              // verifie que toute la chaine a ete consommee
         return (true);
