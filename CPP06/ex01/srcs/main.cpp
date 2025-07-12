@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 16:18:22 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/02 16:55:41 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:39:39 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int main()
     data.age = 42;
     data.name = "Marvin";
     uintptr_t serialized = Serializer::serialize(&data);
-    std::cout << "Serialized Data: " << serialized << std::endl;
+    std::cout << "Serialization: " << std::endl
+              << "   serialized Data: " << serialized << std::endl;
 
     Data *deserialized = Serializer::deserialize(serialized);
     if (deserialized == &data)

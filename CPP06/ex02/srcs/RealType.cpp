@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:29:04 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/09 15:08:26 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/12 13:20:50 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Base *generate(void)
 {
     int nb;
-    std::srand(std::time(0)); // init rand
     nb = std::rand() % 3; // genere un chiffre entre 0 et 2
     if (nb == 0)
         return (new (A));
@@ -43,7 +42,7 @@ void identify(Base &p)
         std::cout << "Type: A" << std::endl;
         return;
     }
-    catch (std::bad_cast &e)
+    catch (std::exception &e)
     {
     }
     try
@@ -52,7 +51,7 @@ void identify(Base &p)
         std::cout << "Type: B" << std::endl;
         return;
     }
-    catch (std::bad_cast &e)
+    catch (std::exception &e)
     {
     }
     try
@@ -61,7 +60,7 @@ void identify(Base &p)
         std::cout << "Type: C" << std::endl;
         return;
     }
-    catch (std::bad_cast &e)
+    catch (std::exception &e)
     {
     }
     std::cout << "Unknown type: std::bad_cast" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:05:38 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/07 14:40:37 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/12 13:08:42 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ bool ScalarConverter::isFloat(const std::string &literal)
     std::string cutNbr;
     char *pEnd;
 
-    if (literal.empty() || literal.back() != 'f') // verifie chaine vide et le 'f' a la fin
+    if (literal.empty()) // verifie chaine vide
         return (false);
-    if (literal.find('.') == std::string::npos) // verifie la presence d un point
+    if (literal[literal.length() - 1] != 'f') // verifie le 'f' a la fin
         return (false);
     cutNbr = literal.substr(0, literal.size() - 1); // enleve le 'f' pour tenter une conversion
     std::strtof(cutNbr.c_str(), &pEnd);             // convertit en float
@@ -89,9 +89,9 @@ bool ScalarConverter::isDouble(const std::string &literal)
 {
     char *pEnd;
 
-    if (literal.empty() || literal.find('f') != std::string::npos)
+    if (literal.empty())
         return (false);
-    if (literal.find('.') == std::string::npos)
+    if (literal.find('f') != std::string::npos)
         return (false);
     std::strtod(literal.c_str(), &pEnd);
     if (*pEnd == '\0')

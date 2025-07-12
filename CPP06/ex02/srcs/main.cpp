@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:03:06 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/07 14:01:44 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/12 13:20:57 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main()
 {
+    std::srand(std::time(0)); // init rand
     Base *goodBasePtr = generate();
     std::cout << "Identify by pointer:" << std::endl;
     identify(goodBasePtr);
