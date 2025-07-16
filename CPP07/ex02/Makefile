@@ -1,7 +1,7 @@
 
 #######################################################
 ## ARGUMENTS
-NAME:= smmax
+NAME:= array
 CC:= c++
 FLAGS:= -Wall -Wextra -Werror -std=c++98
 
@@ -10,7 +10,7 @@ FLAGS:= -Wall -Wextra -Werror -std=c++98
 SRCS_DIR:= ./srcs
 OBJS_DIR:= ./objs
 
-FILES:= main.cpp whatever.cpp
+FILES:= main.cpp 
 
 SRCS:= $(addprefix $(SRCS_DIR)/, $(FILES))
 OBJS:= $(addprefix $(OBJS_DIR)/, $(FILES:.cpp=.o))

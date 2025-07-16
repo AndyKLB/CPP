@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:59:37 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/14 14:09:49 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:15:14 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,7 @@ const T & max(const T & x, const T & y)
 {
     return(x >= y ? x : y);
 }
+
+
+
 #endif

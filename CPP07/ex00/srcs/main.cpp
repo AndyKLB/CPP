@@ -6,16 +6,16 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:08:40 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/14 14:12:22 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/14 15:47:58 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/smmax.tpp"
+#include "../header/Smmax.hpp"
 
 int main(void)
 {
-    int a = 2;
-    int b = 3;
+    float a = 2;
+    float b = 3;
     ::swap(a, b);
     std::cout << "a = " << a << ", b = " << b << std::endl;
     std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
