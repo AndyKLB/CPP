@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Iter.tpp                                           :+:      :+:    :+:   */
+/*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:43:31 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/14 15:19:13 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/16 16:02:55 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ template <typename T>
 void printArray(const T &array)
 {
     std::cout << array << " ";
+}
+
+template <typename T>
+void printArrayMore(const T &array)
+{
+    static int i = 0;
+    std::cout << "[" << i << "] = ";
+    std::cout << array  << std::endl;
+    i++;
 }
 
 #endif
