@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 15:50:01 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/16 14:46:40 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/17 11:38:18 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@
 template <typename T>
 class Array
 {
-    public:
+public:
     Array();
     Array(unsigned int n);
     Array(const Array &src);
     ~Array();
+
+    unsigned int size() const;
+    const T *getArrayAdress() const;
     
     Array &operator=(const Array &rhs);
-    unsigned int size() const;
-    
     T &operator[](unsigned int index);
     const T &operator[](unsigned int index) const;
-    
-    private:
+
+private:
     T *_array;
     unsigned int _size;
 };

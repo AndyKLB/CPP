@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 15:45:32 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/16 14:50:28 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/17 11:37:09 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 int main()
 {
-    Array<char> charTab;
+    Array<std::string> stringTab;
     Array<int> intTab;
-    if (charTab.size() == 0 && intTab.size() == 0)
+    if (stringTab.size() == 0 && intTab.size() == 0)
+    {
+        std::cout << "stringTab array adress = " << stringTab.getArrayAdress() << " | intTab array adress = " << intTab.getArrayAdress() << std::endl;
         std::cout << "Template with init array to 0 worked well!" << std::endl;
+    }
     std::cout << std::endl;
 
     Array<float> floatTab(5);
@@ -31,17 +34,18 @@ int main()
 
     Array<float> equalConst;
     equalConst = floatTab;
+    std::cout << "equalConst array adress = " << equalConst.getArrayAdress() << " | floatTab array adress = " << floatTab.getArrayAdress() << std::endl;
     for (unsigned int i = 0; i < equalConst.size(); i++)
         std::cout << "equalConst = " << equalConst[i] << " | floatTab = " << floatTab[i] << std::endl;
-    std::cout << "if all value are equal operator \"=\" worked well!" << std::endl;
+    std::cout << "if all value are equal operator \"=\" and array adresses are differents worked well!" << std::endl;
     std::cout << std::endl;
 
     Array<float> copyConst(equalConst);
-    std::cout << "equalConst adress = " << &equalConst << " | copyConst adress = " << &copyConst << std::endl;
+    std::cout << "equalConst array adress = " << equalConst.getArrayAdress() << " | copyConst array adress = " << copyConst.getArrayAdress() << std::endl;
     copyConst[0] = 42;
     for (unsigned int i = 0; i < copyConst.size(); i++)
         std::cout << "equalConst = " << equalConst[i] << " | copyConst = " << copyConst[i] << std::endl;
-    std::cout << "if all value are equal, except index [0], and adress are different copy constructor with deep copy worked well!" << std::endl;
+    std::cout << "if all value are equal, except index [0], and array adresses are differents copy constructor with deep copy worked well!" << std::endl;
     std::cout << std::endl;
 
     // const Array<float> constCopy(copyConst);
@@ -57,8 +61,8 @@ int main()
 
     try
     {
-    //   std::cout <<  constCopy[0] << std::endl; // possible pour la lecture
-      std::cout <<  copyConst[80] << std::endl;
+        //   std::cout <<  constCopy[0] << std::endl; // possible pour la lecture
+        std::cout << copyConst[80] << std::endl;
     }
     catch (const std::exception &e)
     {
