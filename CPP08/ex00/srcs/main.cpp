@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 15:17:11 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/21 17:21:50 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:00:12 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main()
     list.push_back(48);
     list.push_back(25);
 
-
     std::cout << "trying with list with two avalaible value and an unavailable value:" << std::endl;
     try
     {
@@ -32,7 +31,7 @@ int main()
     }
     catch (const std::exception &e)
     {
-        std::cerr << "value not available in the list" << '\n';
+        std::cerr << "Error catched: " << e.what() << '\n';
     }
     std::cout << std::endl;
 
@@ -53,7 +52,7 @@ int main()
     }
     catch (const std::exception &e)
     {
-        std::cerr << "value not available in the list" << '\n';
+        std::cerr << "Error catched: " << e.what() << '\n';
     }
     std::cout << std::endl;
 
@@ -74,6 +73,6 @@ int main()
     }
     catch (const std::exception &e)
     {
-        std::cerr << "value not available in the list" << '\n';
+        std::cerr << "Error catched: " << e.what() << '\n';
     }
 }
