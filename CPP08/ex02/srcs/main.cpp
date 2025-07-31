@@ -6,12 +6,16 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:25:05 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/23 16:49:17 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/31 15:17:00 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/MutantStack.hpp"
 
+void print(int x)
+{
+    std::cout << x << std::endl;
+}
 int main()
 {
     std::cout << "-----MutantStack test-----" << std::endl;
@@ -32,11 +36,7 @@ int main()
     ++it;
     --it; // to test increment and decrement operators if not compilation error
     std::cout << "MutantStack contents:" << std::endl;
-    while (it != ite)
-    {
-        std::cout << *it << std::endl;
-        ++it;
-    }
+    std::for_each(it, ite, print);
     std::stack<int> s(mstack); // check if MutantStack is compatible with stack
     std::cout << std::endl;
 
@@ -58,10 +58,6 @@ int main()
     ++listIt;
     --listIt;
     std::cout << "List contents:" << std::endl;
-    while (listIt != listIte)
-    {
-        std::cout << *listIt << std::endl;
-        ++listIt;
-    }
+    std::for_each(listIt, listIte, print);
     return 0;
 }

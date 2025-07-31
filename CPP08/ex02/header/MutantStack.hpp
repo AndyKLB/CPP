@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:24:59 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/22 17:08:46 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/07/31 15:08:01 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stack>
 #include <list>
 #include <iostream>
+#include <algorithm>
 
 template <typename T>
 class MutantStack : public std::stack<T>
