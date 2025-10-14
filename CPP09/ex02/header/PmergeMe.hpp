@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:46:08 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/08 13:41:55 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/14 14:28:19 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 #include <algorithm>
 #include <ctime>
 
+
 class PmergeMe
 {
 public:
@@ -43,8 +44,16 @@ public:
     void printTimeSort();
 
 private:
+    // sort with vector
     const std::vector<int> generateJacobsthalVec(int sizePending) const;
-    const std::deque<int> generateJacobsthalDeq(int sizePending) const;
+    const std::vector<int> setOrderInsertVec(int size);
+    void generateJackOrderVec(size_t size, std::vector<int> &jacSuite, std::vector<int> &jackOrder);
+
+    // sort with dequeu
+    // const std::deque<int> generateJacobsthalDeq(int size) const;
+    // void generateJackOrderDeq(int start, int size, std::deque<int> &jacSuite, std::deque<int> &jackOrder);
+    // const std::deque<int> setOrderInsertDeq(int size);
+    
     std::vector<int> _vector;
     std::deque<int> _deque;
     double _dequeTime;
