@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:24:30 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/14 14:23:18 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:17:27 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ int main(int ac, char **av)
     std::vector<int>::const_iterator it = numbersArgs.begin();
     for (; it < numbersArgs.end(); it++)
         merge.addNumbersContainers((*it));
-    // merge.printBeforeSort();
+    merge.printBeforeSort();
     merge.sortVector(); // todo
-    // merge.sortDeque(); // todo
-    // merge.printAfterSort();
-    // merge.printTimeSort();
+    merge.sortDeque(); // todo
+    merge.printAfterSort();
+    merge.printTimeSort();
 }

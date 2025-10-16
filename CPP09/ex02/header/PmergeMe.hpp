@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:46:08 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/14 14:28:19 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:17:11 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 #include <algorithm>
 #include <ctime>
 
-
 class PmergeMe
 {
 public:
@@ -45,15 +44,25 @@ public:
 
 private:
     // sort with vector
-    const std::vector<int> generateJacobsthalVec(int sizePending) const;
-    const std::vector<int> setOrderInsertVec(int size);
+    void generateJacobsthalVec(int size, std::vector<int> &jacSuite) const;
+    void setOrderInsertVec(int size, std::vector<int> &jackOrder, std::vector<int> &remainChain, std::vector<int> &mainChain);
+    void setPairVec(std::vector<std::pair<int, int> > &pairs);
     void generateJackOrderVec(size_t size, std::vector<int> &jacSuite, std::vector<int> &jackOrder);
+    void sortPairVec(std::vector<std::pair<int, int> > &pairs, int left, int right);
+    void mergePairsVec(std::vector<std::pair<int, int> > &pairs, int left, int mid, int right);
+    void makeChainsVec(std::vector<std::pair<int, int> > &pairs, std::vector<int> &mainChain, std::vector<int> &remainChain);
+    int binSearchVec(std::vector<int> &mainChain, int target, size_t start, size_t end);
 
     // sort with dequeu
-    // const std::deque<int> generateJacobsthalDeq(int size) const;
-    // void generateJackOrderDeq(int start, int size, std::deque<int> &jacSuite, std::deque<int> &jackOrder);
-    // const std::deque<int> setOrderInsertDeq(int size);
-    
+    void setPairDeq(std::deque<std::pair<int, int> > &pairs);
+    void sortPairDeq(std::deque<std::pair<int, int> > &pairs, int left, int right);
+    void mergePairsDeq(std::deque<std::pair<int, int> > &pairs, int left, int mid, int right);
+    void makeChainsDeq(std::deque<std::pair<int, int> > &pairs, std::deque<int> &mainChain, std::deque<int> &remainChain);
+    void setOrderInsertDeq(int size, std::deque<int> &jackOrder, std::deque<int> &remainChain, std::deque<int> &mainChain);
+    int binSearchDeq(std::deque<int> &mainChain, int target, size_t start, size_t end);
+    void generateJackOrderDeq(size_t size, std::deque<int> &jacSuite, std::deque<int> &jackOrder);
+    void generateJacobsthalDeq(int size, std::deque<int> &jacSuite) const;
+
     std::vector<int> _vector;
     std::deque<int> _deque;
     double _dequeTime;
