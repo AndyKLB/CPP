@@ -6,13 +6,17 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:46:08 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/16 14:17:11 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:51:42 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGE_ME_CLASS
 #define PMERGE_ME_CLASS
 
+#define C_RESET  "\033[0m"
+#define C_TITLE "\033[36m"  // cyan
+#define C_BEFORE "\033[31m"  // rouge
+#define C_AFTER  "\033[32m"  // vert
 #include <vector>
 #include <deque>
 #include <string>

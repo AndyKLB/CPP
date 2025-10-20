@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:46:19 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/16 14:32:19 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/16 16:30:02 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,28 @@ void PmergeMe::addNumbersContainers(int number)
 
 void PmergeMe::printBeforeSort()
 {
-    std::cout << "Before with vector: ";
+    std::cout << C_TITLE << "Before with vector: " << C_RESET;
     std::vector<int>::const_iterator it = _vector.begin();
     for (; it != _vector.end(); ++it)
-        std::cout << *it << " ";
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "Before with deque: ";
-    std::deque<int>::const_iterator ite = _deque.begin();
-    for (; ite != _deque.end(); ++ite)
-        std::cout << *ite << " ";
-    std::cout << std::endl;
+        std::cout << C_BEFORE << *it << " " << C_RESET;
+    // std::cout << std::endl;
+    // std::cout << C_TITLE  << "Before with deque: " << C_RESET;
+    // std::deque<int>::const_iterator ite = _deque.begin();
+    // for (; ite != _deque.end(); ++ite)
+    //     std::cout << C_BEFORE << *ite << " " << C_RESET;
     std::cout << std::endl;
 }
 void PmergeMe::printAfterSort()
 {
-    std::cout << "After with vector: ";
+    std::cout << C_TITLE << "After with vector: " << C_RESET;
     std::vector<int>::const_iterator it = _vector.begin();
     for (; it != _vector.end(); ++it)
-        std::cout << *it << " ";
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "After with deque: ";
-    std::deque<int>::const_iterator ite = _deque.begin();
-    for (; ite != _deque.end(); ++ite)
-        std::cout << *ite << " ";
-    std::cout << std::endl;
+        std::cout << C_AFTER << *it << " " << C_RESET;
+    // std::cout << std::endl;
+    // std::cout << C_TITLE  << "After with deque: " << C_RESET;
+    // std::deque<int>::const_iterator ite = _deque.begin();
+    // for (; ite != _deque.end(); ++ite)
+    //     std::cout << C_BEFORE << *ite << " " << C_RESET;
     std::cout << std::endl;
 }
 void PmergeMe::printTimeSort()
@@ -133,8 +129,8 @@ int PmergeMe::binSearchVec(std::vector<int> &mainChain, int target, size_t start
     while (start <= end)
     {
         midInsertPos = start + (end - start) / 2;
-        if (target == mainChain.at(midInsertPos))
-            return (midInsertPos);
+        if (target == mainChain[midInsertPos])
+            return (-1);
         if (midInsertPos == 0)
         {
             if (target > mainChain[midInsertPos])
@@ -177,6 +173,8 @@ void PmergeMe::setOrderInsertVec(int size, std::vector<int> &jackOrder, std::vec
         target = remainChain[(*it - 1)];
         endPos = *it + syncPairPos;
         insertPos = binSearchVec(mainChain, target, 0, endPos);
+        if (static_cast<int>(insertPos) == -1)
+            continue;
         mainChain.insert(mainChain.begin() + insertPos, target);
         syncPairPos++;
     }
@@ -304,8 +302,8 @@ int PmergeMe::binSearchDeq(std::deque<int> &mainChain, int target, size_t start,
     while (start <= end)
     {
         midInsertPos = start + (end - start) / 2;
-        if (target == mainChain.at(midInsertPos))
-            return (midInsertPos);
+        if (target == mainChain[midInsertPos])
+            return (-1);
         if (midInsertPos == 0)
         {
             if (target > mainChain[midInsertPos])
@@ -348,6 +346,8 @@ void PmergeMe::setOrderInsertDeq(int size, std::deque<int> &jackOrder, std::dequ
         target = remainChain[(*it - 1)];
         endPos = *it + syncPairPos;
         insertPos = binSearchDeq(mainChain, target, 0, endPos);
+        if (static_cast<int>(insertPos) == -1)
+            continue;
         mainChain.insert(mainChain.begin() + insertPos, target);
         syncPairPos++;
     }
