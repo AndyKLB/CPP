@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 14:00:07 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/30 12:27:37 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/21 11:43:19 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cerr << "Error: could not open file." << std::endl;
+        std::cerr << "Error: missing file: <prog> <file>" << std::endl;
         return (1);
     }
     std::ifstream dataFile("assets/data.csv");
