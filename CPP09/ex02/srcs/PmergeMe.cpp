@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:46:19 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/16 16:30:02 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/21 12:07:57 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,38 +123,38 @@ void PmergeMe::generateJackOrderVec(size_t size, std::vector<int> &jacSuite, std
 
 int PmergeMe::binSearchVec(std::vector<int> &mainChain, int target, size_t start, size_t end)
 {
-    int midInsertPos;
+    int midPos;
 
-    midInsertPos = start + (end - start) / 2;
+    midPos = start + (end - start) / 2;
     while (start <= end)
     {
-        midInsertPos = start + (end - start) / 2;
-        if (target == mainChain[midInsertPos])
+        midPos = start + (end - start) / 2;
+        if (target == mainChain[midPos])
             return (-1);
-        if (midInsertPos == 0)
+        if (midPos == 0)
         {
-            if (target > mainChain[midInsertPos])
+            if (target > mainChain[midPos])
             {
-                midInsertPos = 1;
+                midPos = 1;
                 break;
             }
             else
             {
-                midInsertPos = 0;
+                midPos = 0;
                 break;
             }
         }
-        if (target > mainChain[midInsertPos])
+        if (target > mainChain[midPos])
         {
-            start = midInsertPos + 1;
+            start = midPos + 1;
         }
         else
-            end = midInsertPos - 1;
+            end = midPos - 1;
     }
-    if (target < mainChain[midInsertPos])
-        return (midInsertPos);
+    if (target < mainChain[midPos])
+        return (midPos);
     else
-        return (midInsertPos + 1);
+        return (midPos + 1);
 }
 
 void PmergeMe::setOrderInsertVec(int size, std::vector<int> &jackOrder, std::vector<int> &remainChain, std::vector<int> &mainChain)
