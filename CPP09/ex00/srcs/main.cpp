@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 14:00:07 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/21 11:43:19 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:27:24 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main(int argc, char **argv)
         if (iss.fail() && !iss.eof())
         {
             std::cerr << "Error: isstringstream" << std::endl;
+            iss.clear();
             continue;
         }
         btc.printInputFile(date, value);

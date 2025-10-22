@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 13:59:46 by ankammer          #+#    #+#             */
-/*   Updated: 2025/07/30 12:01:11 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:48:17 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ public:
     ~BitcoinExchange();
 
     void printInputFile(std::string &date, float value) const;
-    static bool isValidDate(const std::string &date);
-    static bool isValidValue(float value);
 
 private:
+    static bool isValidDate(const std::string &date);
+    static bool isValidValue(float value);
     BitcoinExchange();
     std::map<std::string, float> _dataFile;
 };
 
-#endif
+#endif`

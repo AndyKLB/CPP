@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:46:19 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/21 12:07:57 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:47:33 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,15 @@ void printPairs(const std::vector<std::pair<int, int> > &jackOrder, const std::s
     for (; it != jackOrder.end(); ++it)
         std::cout << "[" << (*it).first << "," << (*it).second << "]" << " ";
     std::cout << std::endl;
+}
+
+std::vector<int> & PmergeMe::getVec()
+{
+    return(_vector);
+}
+std::deque<int> & PmergeMe::getDeque()
+{
+    return(_deque);
 }
 // sort vector
 
@@ -340,7 +349,7 @@ void PmergeMe::setOrderInsertDeq(int size, std::deque<int> &jackOrder, std::dequ
     size_t endPos;
     size_t insertPos;
     int target;
-    mainChain.insert(mainChain.begin(), remainChain[0]);
+    mainChain.push_front(remainChain[0]);
     for (; it < jackOrder.end(); ++it)
     {
         target = remainChain[(*it - 1)];

@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:24:30 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/16 14:17:27 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:27:09 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,16 @@ void parseArgument(int ac, char **av, std::vector<int> &numbersArgs)
     }
     return;
 }
+void compareRealSort(std::vector<int> &test, PmergeMe &merge)
+{
+    std::sort(test.begin(), test.end());
+
+    for (size_t i = 0; i < test.size(); i++)
+    {
+        if (test[i] != merge.getVec()[i] || test[i] != merge.getDeque()[i])
+            throw(std::logic_error("fail to sort"));
+    }
+}
 
 int main(int ac, char **av)
 {
@@ -70,11 +80,24 @@ int main(int ac, char **av)
     }
     PmergeMe merge;
     std::vector<int>::const_iterator it = numbersArgs.begin();
+    std::vector<int> test;
     for (; it < numbersArgs.end(); it++)
+    {
         merge.addNumbersContainers((*it));
+        test.push_back((*it));
+    }
     merge.printBeforeSort();
-    merge.sortVector(); // todo
-    merge.sortDeque(); // todo
+    merge.sortVector();
+    merge.sortDeque();
+    try
+    {
+        compareRealSort(test, merge);
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+        return (1);
+    }
     merge.printAfterSort();
     merge.printTimeSort();
 }
