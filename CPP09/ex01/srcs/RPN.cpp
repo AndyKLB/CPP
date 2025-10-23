@@ -6,7 +6,7 @@
 /*   By: ankammer <ankammer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:47:04 by ankammer          #+#    #+#             */
-/*   Updated: 2025/10/22 14:49:19 by ankammer         ###   ########.fr       */
+/*   Updated: 2025/10/23 13:14:55 by ankammer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int RPN::rpnCalcul(const std::string &expression)
 
 bool RPN::isNumber(const std::string &token) const
 {
-    return ((isdigit(token[0]) && token.length() == 1) || (token.length() == 2 && token[0] == '-' && isdigit(token[1])));
+    return (token.length() == 1 && isdigit(token[0]));
 }
 
 bool RPN::isOperator(const std::string &token) const
